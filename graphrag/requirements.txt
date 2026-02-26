@@ -1,0 +1,13 @@
+# Core
+anthropic>=0.25.0
+networkx>=3.2
+
+# Embeddings (optional but recommended)
+voyageai>=0.2.0
+
+# Visualisation (optional)
+matplotlib>=3.7.0
+
+# Notebook support (optional)
+jupyter>=1.0.0
+ipykernel>=6.0.0

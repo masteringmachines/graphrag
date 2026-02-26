@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "graphrag"
+version = "0.1.0"
+description = "Graph-augmented Retrieval for Question Answering using Claude + NetworkX"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+keywords = ["graphrag", "knowledge-graph", "rag", "llm", "anthropic", "nlp"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "anthropic>=0.25.0",
+    "networkx>=3.2",
+]
+
+[project.optional-dependencies]
+embeddings = ["voyageai>=0.2.0"]
+viz = ["matplotlib>=3.7.0"]
+notebook = ["jupyter>=1.0.0", "ipykernel>=6.0.0"]
+all = ["voyageai>=0.2.0", "matplotlib>=3.7.0", "jupyter>=1.0.0"]
+
+[project.scripts]
+graphrag = "graphrag_cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
